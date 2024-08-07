@@ -1,3 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "YekanBakh-Regular";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Regular.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Medium";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Medium.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Light";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Light.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Heavy";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Heavy.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Hairline";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Hairline.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Bold";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Bold.ttf');
+}
+
+@font-face {
+  font-family: "YekanBakh-Fat";
+  src: url('../src/project-Store/assets/fonts/YekanBakh-Fat.ttf');
+}
+
+@font-face {
+  font-family: "B-yekan";
+  src: url("../src/project-Store/assets/fonts/Yekan.ttf");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +49,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  background-color: #FBFBFB;
+  font-family:'YekanBakh-Regular' ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

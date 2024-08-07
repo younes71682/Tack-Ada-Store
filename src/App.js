@@ -1,10 +1,8 @@
-
+import Main from "./project-Store/Main";
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <Main />
   );
 }
 
