@@ -79,7 +79,7 @@ const HomePage = () => {
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-3 my-3 mx-6 w-[600px]">
+      <div className="flex flex-col items-center gap-4 my-3 mx-6 w-[600px]">
         <Header onSearch={setSearchQuery} />
 
         <div className="flex justify-between items-center w-full">
@@ -92,7 +92,7 @@ const HomePage = () => {
           <Fillter />
         </div>
 
-        <div className="flex flex-wrap gap-[15px] w-full max-[642px]:justify-center">
+        <div className="flex flex-wrap gap-11 w-full max-[642px]:justify-center">
           {visibleItems.map(item => (
             <ProductItem key={item.id} {...item} />
           ))}

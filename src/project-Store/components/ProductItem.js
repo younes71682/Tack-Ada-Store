@@ -15,9 +15,9 @@ const ProductItem = (props) => {
     const quantity = cartItem && cartItem.quantity
 
     return (
-        <div className='flex flex-col w-[190px] rounded-b-[4px]'>
+        <div className='flex flex-col w-[170px]  rounded-b-[4px]'>
 
-            <div className='flex justify-center items-center h-[110px]'>
+            <div className='flex justify-center items-center h-[105px]'>
                 {img ?
                     <img src={img} alt={name} className='bg-cover bg-fixed w-[90px] h-[100px]' />
                     : null

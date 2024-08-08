@@ -11,7 +11,7 @@ const Navbar = () => {
     const totalQuantity = Cart.reduce((total, item) => total += item.quantity, 0)
     return (
         <div className='flex justify-center'>
-            <div className='flex flex-col justify-between h-[8rem] w-[600px] mx-6 mt-9'>
+            <div className='flex flex-col justify-between h-[109px] w-[600px] mx-6 mt-4'>
 
                 <div className='flex justify-center text-center '>
                     <h1 className='text-[#5a0f85] text-5xl font-YekanBakhBold tracking-wider'>ADA SHOP</h1>
