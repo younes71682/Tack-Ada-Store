@@ -15,8 +15,8 @@ const CartItem = (props) => {
     return (
         <div className='flex justify-between border-2 border-[#8d04d0] rounded-[4px] w-[99%] p-3 max-[450px]:flex-col'>
 
-            <div className='flex gap-8 max-[450px]:justify-around  bg-blue-500'>
-                <div className='flex justify-center items-center  bg-purple-300 w-[100px] h-[100px] max-[450px]:w-[150px] max-[450px]:h-[150px]'>
+            <div className='flex gap-8 max-[450px]:justify-around'>
+                <div className='flex justify-center items-center w-[100px] h-[100px] max-[450px]:w-[150px] max-[450px]:h-[150px]'>
                     <img src={img} alt={name} className='bg-cover bg-fixed w-full h-full' />
                 </div>
 
@@ -29,7 +29,7 @@ const CartItem = (props) => {
                 </div>
             </div>
 
-            <div className='flex flex-col max-[450px]:items-center justify-center bg-green-500 flex-1'>
+            <div className='flex flex-col max-[450px]:items-center justify-center flex-1'>
                 <div className='flex items-center justify-end gap-1 text'>
                     <p className='text-[#cd8fce] text-lg'>{totalPriceItem.toLocaleString()}</p>
                     <p className='text-[#cd8fce] text-lg'>تومان</p>

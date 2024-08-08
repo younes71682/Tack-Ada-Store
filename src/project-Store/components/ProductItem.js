@@ -15,17 +15,17 @@ const ProductItem = (props) => {
     const quantity = cartItem && cartItem.quantity
 
     return (
-        <div className='flex flex-col bg-green-500 w-[180px] rounded-b-[4px]'>
+        <div className='flex flex-col w-[190px] rounded-b-[4px]'>
 
-            <div className='flex justify-center items-center  bg-purple-300 h-[90px]'>
+            <div className='flex justify-center items-center h-[110px]'>
                 {img ?
-                    <img src={img} alt={name} className='bg-cover bg-fixed w-[90px] h-[90px]' />
+                    <img src={img} alt={name} className='bg-cover bg-fixed w-[90px] h-[100px]' />
                     : null
                 }
             </div>
 
             <div className='flex flex-col'>
-                <p className='text-[#9002d0] '>{name}</p>
+                <p className='text-[#9002d0] font-YekanBakhRegular'>{name}</p>
                 {price &&
                     <div className='flex justify-end gap-1'>
                         <p className='text-[#cd8fce]'>{priceN.toLocaleString()}</p>

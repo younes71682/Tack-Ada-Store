@@ -27,8 +27,8 @@ const Navbar = () => {
                         <p className={`text-sm ${pathname === '/cart' ? 'text-white' : 'text-[#8e03d0]'}`}>سبدخرید</p>
                         <HiOutlineShoppingCart color={`${pathname === '/cart' ? 'white' : '#8e03d0'}`} />
                         {totalQuantity > 0  &&
-                            <div className='flex justify-center items-center bg-[#e71ee8] rounded-[2px] w-[18px] absolute left-6 '>
-                                <p className=' text-white text-xs mt-[2px]'>{totalQuantity}</p>
+                            <div className={`flex justify-center items-center rounded-[2px] w-[18px] absolute left-6 ${pathname === '/cart' ? 'bg-[#f9f1fc]' : 'bg-[#e71ee8]'} `}>
+                                <p className={`text-xs mt-[2px] ${pathname === '/cart' ? 'text-[#8e03d0]' : 'text-white' }`}>{totalQuantity}</p>
                             </div>}
                     </Link>
                 </div>

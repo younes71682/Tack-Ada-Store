@@ -1,7 +1,7 @@
 import empty_Cart from '../../assets/images/empty_Cart.png'
 const CartEmpty = () => {
   return (
-    <div className='flex flex-col items-center justify-center bg-red-800 mx-6  gap-10'>
+    <div className='flex flex-col items-center justify-center mx-6  gap-10'>
 
       <img src={empty_Cart} alt='Empty' className='w-full' />
 
