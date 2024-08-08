@@ -1,7 +1,7 @@
 import React from 'react'
 import CartItem from '../components/cart/CartItem'
 import { BsFillCreditCard2FrontFill } from "react-icons/bs";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CartEmpty from '../components/cart/CartEmpty';
 import { PRODUCRS } from '../components/products';
 

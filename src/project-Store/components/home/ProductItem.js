@@ -3,7 +3,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { useDispatch, useSelector } from 'react-redux';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
-import { addToCart, removeFromCart } from '../redux/basketSlice';
+import { addToCart, removeFromCart } from '../../redux/basketSlice';
 
 const ProductItem = (props) => {
     const { id, name, price, img } = props
@@ -11,7 +11,7 @@ const ProductItem = (props) => {
 
     const Cart = useSelector((state) => state.shopping.Cart)
     const dispatch = useDispatch()
-     const cartItem = Cart.find((item) => item.id === id)
+    const cartItem = Cart.find((item) => item.id === id)
     const quantity = cartItem && cartItem.quantity
 
     return (

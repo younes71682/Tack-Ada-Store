@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/home/Header';
 import { PRODUCRS } from '../components/products';
-import ProductItem from '../components/ProductItem';
+import ProductItem from '../components/home/ProductItem';
 import Fillter from '../components/home/Fillter';
 import { BeatLoader } from 'react-spinners';
 import { FaAngleDown, FaArrowCircleUp } from 'react-icons/fa';
@@ -16,16 +16,13 @@ const HomePage = () => {
   const Cart = useSelector((state) => state.shopping.Cart);
   const totalQuantity = Cart.reduce((total, item) => total + item.quantity, 0);
 
-  // فیلتر کردن محصولات بر اساس جستجو
   const filteredProducts = PRODUCRS.filter(product =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // بارگذاری آیتم‌های بیشتر
   const loadMoreItems = async () => {
     setLoading(true);
 
-    // وضعیت بارگذاری فیک
     const optimisticItems = Array.from({ length: 4 }, (_, index) => ({
       id: `temp-${index}`,
       name: 'Loading...',
@@ -39,21 +36,19 @@ const HomePage = () => {
         }, 1000);
       });
 
-      // جایگزینی آیتم‌های فیک با آیتم‌های واقعی
       setVisibleItems(prevItems => [
         ...prevItems.slice(0, prevItems.length - optimisticItems.length),
         ...newItems,
       ]);
     } catch (err) {
-      // خطا مدیریت نمی‌شود
+
     } finally {
-      setLoading(false); // وضعیت بارگذاری همیشه به‌روز می‌شود
+      setLoading(false); 
     }
   };
 
 
-  // اسکرول به بالا
-  const handleMoveUp = () => {
+   const handleMoveUp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -104,7 +99,7 @@ const HomePage = () => {
               {loading ? (
                 <BeatLoader color="#9002d0" />
               ) : (
-                <div className="flex items-center gap-2 cursor-pointer ">
+                <div className="flex items-center justify-center gap-2 rounded-[4px] cursor-pointer w-[150px]">
                   <p className="text-[#9002d0]">مشاهده بیشتر</p>
                   <FaAngleDown color="#9002d0" />
                 </div>
