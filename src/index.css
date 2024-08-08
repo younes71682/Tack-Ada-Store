@@ -8,39 +8,10 @@
 }
 
 @font-face {
-  font-family: "YekanBakh-Medium";
-  src: url('../src/project-Store/assets/fonts/YekanBakh-Medium.ttf');
-}
-
-@font-face {
-  font-family: "YekanBakh-Light";
-  src: url('../src/project-Store/assets/fonts/YekanBakh-Light.ttf');
-}
-
-@font-face {
-  font-family: "YekanBakh-Heavy";
-  src: url('../src/project-Store/assets/fonts/YekanBakh-Heavy.ttf');
-}
-
-@font-face {
-  font-family: "YekanBakh-Hairline";
-  src: url('../src/project-Store/assets/fonts/YekanBakh-Hairline.ttf');
-}
-
-@font-face {
   font-family: "YekanBakh-Bold";
   src: url('../src/project-Store/assets/fonts/YekanBakh-Bold.ttf');
 }
 
-@font-face {
-  font-family: "YekanBakh-Fat";
-  src: url('../src/project-Store/assets/fonts/YekanBakh-Fat.ttf');
-}
-
-@font-face {
-  font-family: "B-yekan";
-  src: url("../src/project-Store/assets/fonts/Yekan.ttf");
-}
 
 body {
   margin: 0;
@@ -51,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
   background-color: #FBFBFB;
-  font-family:'YekanBakh-Regular' ;
+  font-family: 'YekanBakh-Regular';
 }
 
 code {
@@ -59,3 +30,20 @@ code {
     monospace;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cd8fce;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9002d0;
+  /* رنگ نوار اسکرول */
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0px 20px 20px 0px rgba(111, 66, 193, 10);
+}

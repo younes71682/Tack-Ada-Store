@@ -4,61 +4,37 @@ const basketSlice = createSlice({
     name: "SHOPPING",
     initialState: {
         Cart: [],
-
     },
     reducers: {
         addToCart: (state, action) => {
-            const { id, name, price, img } = action.payload
-            const existence = state.Cart.find((i) => i.id === id)
-            if (!existence) {
+            const { id, name, price, img } = action.payload;
+            const existingItem = state.Cart.find((item) => item.id === id);
+            if (!existingItem) {
                 state.Cart.push({
-                    ...state,
-                    Cart: state.Cart = [
-                        ...state.Cart,
-                        {
-                            id: id,
-                            name: name,
-                            price: price,
-                            img: img,
-                            quantity: 1
-                        }
-                    ]
-                })
+                    id: id,
+                    name: name,
+                    price: price,
+                    img: img,
+                    quantity: 1
+                });
             } else {
-                return {
-                    Cart: state.Cart.map((item) => {
-                        if (item.id === id) {
-                            return { ...item, quantity: item.quantity + 1 }
-                        } else {
-                            return item
-                        }
-                    })
-                }
+                existingItem.quantity += 1;
             }
         },
 
-
         removeFromCart: (state, action) => {
-            const id = action.payload.id
-            const existence = state.Cart.find((i) => i.id === id)
-            if (existence.quantity > 1) {
-                return {
-                    Cart: state.Cart.map((item) => {
-                        if (item.id === id) {
-                            return { ...item, quantity: item.quantity - 1 }
-                        } else {
-                            return item
-                        }
-                    })
-                }
-            } else {
-                return {
-                    Cart: state.Cart.filter((i) => i.id !== id)
+            const id = action.payload;
+            const existingItem = state.Cart.find((item) => item.id === id);
+            if (existingItem) {
+                if (existingItem.quantity > 1) {
+                    existingItem.quantity -= 1;
+                } else {
+                    state.Cart = state.Cart.filter((item) => item.id !== id);
                 }
             }
         }
     }
-})
+});
 
-export const { addToCart, removeFromCart } = basketSlice.actions
-export default basketSlice.reducer
+export const { addToCart, removeFromCart } = basketSlice.actions;
+export default basketSlice.reducer;
