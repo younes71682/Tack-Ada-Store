@@ -15,7 +15,7 @@ const ProductItem = (props) => {
     const quantity = cartItem && cartItem.quantity
 
     return (
-        <div className='flex flex-col w-[170px]  rounded-b-[4px]'>
+        <div className='flex flex-col w-[170px] rounded-b-[4px]'>
 
             <div className='flex justify-center items-center h-[105px]'>
                 {img ?
@@ -24,7 +24,7 @@ const ProductItem = (props) => {
                 }
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col bg-red-400 h-[48px]'>
                 <p className='text-[#9002d0] font-YekanBakhRegular'>{name}</p>
                 {price &&
                     <div className='flex justify-end gap-1'>
