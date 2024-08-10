@@ -24,7 +24,7 @@ const ProductItem = (props) => {
                 }
             </div>
 
-            <div className='flex flex-col bg-red-400 h-[48px]'>
+            <div className='flex flex-col h-[48px]'>
                 <p className='text-[#9002d0] font-YekanBakhRegular'>{name}</p>
                 {price &&
                     <div className='flex justify-end gap-1'>

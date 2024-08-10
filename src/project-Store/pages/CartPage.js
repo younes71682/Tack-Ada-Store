@@ -4,11 +4,13 @@ import { BsFillCreditCard2FrontFill } from "react-icons/bs";
 import { useSelector } from 'react-redux';
 import CartEmpty from '../components/cart/CartEmpty';
 import { PRODUCRS } from '../components/products';
+import { PaymentError, PaymentSuccess } from '../components/ConditionPayment';
+import { ToastContainer } from 'react-toastify';
 
 const CartPage = () => {
 
   const Cart = useSelector((state) => state.shopping.Cart)
-  
+
   const { totalPrice, totalItems, totalProducts } = Cart.reduce((accumulator, currentItem) => {
     const itemProduct = PRODUCRS.find((i) => i.id === currentItem.id)
     const price = Number(itemProduct.price) || 0
@@ -21,6 +23,15 @@ const CartPage = () => {
     return accumulator
   }, { totalPrice: 0, totalItems: 0, totalProducts: 0 })
 
+
+  const handlePayment = () => {
+    const isSuccess = Math.random() >= 0.5;
+    if (isSuccess) {
+      PaymentSuccess(); // نمایش پیام موفقیت
+    } else {
+      PaymentError(); // نمایش پیام خطا
+    }
+  };
 
   return (
     <div className='flex justify-center items-center h-[567px]'>
@@ -45,7 +56,7 @@ const CartPage = () => {
                 <p>تومان</p>
               </div>
             </div>
-            <div className='flex items-center justify-between p-2 rounded-[4px] bg-[#9002d0] w-[140px]'>
+            <div  onClick={handlePayment} className='flex items-center justify-between p-2 rounded-[4px] cursor-pointer bg-[#9002d0] w-[140px]'>
               <p className='text-sm text-white'>تکمیل و پرداخت</p>
               <BsFillCreditCard2FrontFill color='white' />
             </div>
@@ -54,6 +65,8 @@ const CartPage = () => {
         :
         <CartEmpty />
       }
+      <ToastContainer className="text-right" />
+
     </div>
   )
 }
