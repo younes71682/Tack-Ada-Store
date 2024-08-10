@@ -7,7 +7,7 @@ const CartEmpty = () => {
 
       <div className='flex flex-col items-center gap-2 text-center'>
         <h3 className='text-xl text-[#8d04d0] font-bold'>سبد خرید شما خالی است.</h3>
-        <p className='text-[#cd8fce]'>می‌توانید با مراجعه به صفحه اصلی، آموزش مورد نظر خود را انتخاب کنید.</p>
+        <p className='text-[#cd8fce]'>می‌توانید با مراجعه به صفحه اصلی، محصول مورد نظر خود را انتخاب کنید.</p>
       </div>
 
 
