@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className='flex justify-center'>
             <div className='flex flex-col justify-between h-[109px] w-[600px] mx-6 mt-4'>
 
-                <div className='flex justify-center text-center '>
+                <div className='flex justify-center text-center animate-pulse'>
                     <h1 className='text-[#5a0f85] text-5xl font-YekanBakhBold tracking-wider'>ADA SHOP</h1>
                 </div>
 

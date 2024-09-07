@@ -52,7 +52,7 @@ const ProductItem = (props) => {
             ) : (
                 <div onClick={() => dispatch(addToCart(props))} className='flex justify-between items-center w-full h-[40px] px-4 bg-[#fbf1fc] rounded-[4px] cursor-pointer transition-transform duration-500 ease-out transform scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100'>
                     <p className='text-[#9002d0] font-bold'>خرید محصول</p>
-                    <HiOutlineShoppingCart color='#8e03d0' />
+                    <HiOutlineShoppingCart color='#8e03d0' className='animate-pulse' />
                 </div>
             )}
         </div>

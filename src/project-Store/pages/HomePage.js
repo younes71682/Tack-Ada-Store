@@ -96,7 +96,7 @@ const HomePage = () => {
           ))}
         </div>
 
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center animate-bounce">
           {visibleItems.length < filteredProducts.length && (
             <button onClick={loadMoreItems} disabled={loading}>
               {loading ? (
