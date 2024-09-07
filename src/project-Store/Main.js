@@ -5,6 +5,7 @@ import CartPage from './pages/CartPage';
 import { Provider } from 'react-redux';
 import stroe from './redux/store';
 import Navbar from './components/layout/Navbar';
+import ProductPageId from './pages/ProductPageId';
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/product/:id" element={<ProductPageId />} />
                     <Route path="/cart" element={<CartPage />} />
                 </Routes>
             </Router>

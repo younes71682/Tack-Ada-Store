@@ -1,23 +1,28 @@
-import React from 'react'
+import React from 'react';
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { useDispatch, useSelector } from 'react-redux';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { addToCart, removeFromCart } from '../../redux/basketSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ProductItem = (props) => {
-    const { id, name, price, img } = props
-    const priceN = Number(price)
+    const { id, name, price, img } = props;
+    const priceN = Number(price);
 
-    const Cart = useSelector((state) => state.shopping.Cart)
-    const dispatch = useDispatch()
-    const cartItem = Cart.find((item) => item.id === id)
-    const quantity = cartItem && cartItem.quantity
+    const Cart = useSelector((state) => state.shopping.Cart);
+    const dispatch = useDispatch();
+    const cartItem = Cart.find((item) => item.id === id);
+    const quantity = cartItem && cartItem.quantity;
+
+    const navigate = useNavigate();
+    const handlerRedirectDescription = (ID) => {
+        navigate(`product/${ID}`)
+    }
 
     return (
-        <div className='flex flex-col w-[170px] rounded-b-[4px]'>
-
-            <div className='flex justify-center items-center h-[105px]'>
+        <div className='flex flex-col w-[170px] rounded-b-[4px] group slide-up'> {/* افزودن کلاس انیمیشن */}
+            <div className='flex justify-center items-center h-[105px]' onClick={() => handlerRedirectDescription(id)}>
                 {img ?
                     <img src={img} alt={name} className='bg-cover bg-fixed w-[90px] h-[100px]' />
                     : null
@@ -34,7 +39,7 @@ const ProductItem = (props) => {
                 }
             </div>
 
-            {cartItem ?
+            {cartItem ? (
                 <div className='flex justify-center gap-1 items-center w-full h-[40px] '>
                     <div onClick={() => dispatch(addToCart(props))} className='flex justify-center items-center w-10 h-full bg-[#9002d0] rounded-[7px] cursor-pointer active:scale-75'>
                         <FaPlus size={12} color='white' />
@@ -44,14 +49,14 @@ const ProductItem = (props) => {
                         <FaMinus size={12} color='#9002d0' />
                     </div>
                 </div>
-                :
-                <div onClick={() => dispatch(addToCart(props))} className='flex justify-between items-center w-full h-[40px] px-4 bg-[#fbf1fc] rounded-[4px] cursor-pointer'>
+            ) : (
+                <div onClick={() => dispatch(addToCart(props))} className='flex justify-between items-center w-full h-[40px] px-4 bg-[#fbf1fc] rounded-[4px] cursor-pointer transition-transform duration-500 ease-out transform scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100'>
                     <p className='text-[#9002d0] font-bold'>خرید محصول</p>
                     <HiOutlineShoppingCart color='#8e03d0' />
                 </div>
-            }
+            )}
         </div>
-    )
+    );
 }
 
-export default ProductItem
+export default ProductItem;

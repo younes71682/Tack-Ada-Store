@@ -13,7 +13,7 @@ const CartItem = (props) => {
     const dispatch = useDispatch()
 
     return (
-        <div className='flex justify-between border-2 border-[#8d04d0] rounded-[4px] w-[99%] p-3 max-[450px]:flex-col'>
+        <div className='flex justify-between border-2 border-[#8d04d0] rounded-[4px] w-[99%] p-3 max-[450px]:flex-col slide-up'>
 
             <div className='flex gap-8 max-[450px]:justify-around'>
                 <div className='flex justify-center items-center w-[100px] h-[100px] max-[450px]:w-[150px] max-[450px]:h-[150px]'>

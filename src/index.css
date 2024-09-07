@@ -48,3 +48,18 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   box-shadow: 0px 20px 20px 0px rgba(111, 66, 193, 10);
 }
+
+@keyframes slide-in {  
+  from {  
+    transform: translateY(-20px);  
+    opacity: 0;  
+  }  
+  to {  
+    transform: translateY(0);  
+    opacity: 1;  
+  }  
+}  
+
+.slide-up {  
+  animation: slide-in 0.5s ease-out backwards; /* زمان و نوع انیمیشن را بر اساس نیاز خود تنظیم کنید */  
+}

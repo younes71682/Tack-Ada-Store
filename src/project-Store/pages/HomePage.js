@@ -6,6 +6,7 @@ import Fillter from '../components/home/Fillter';
 import { BeatLoader } from 'react-spinners';
 import { FaAngleDown, FaArrowCircleUp } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [visibleItems, setVisibleItems] = useState(PRODUCRS.slice(0, 6));
@@ -43,12 +44,12 @@ const HomePage = () => {
     } catch (err) {
 
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
 
-   const handleMoveUp = () => {
+  const handleMoveUp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -65,6 +66,8 @@ const HomePage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [searchQuery,]);
+
+ 
 
   return (
     <div className="flex justify-center">
